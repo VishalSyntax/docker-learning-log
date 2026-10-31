@@ -1,0 +1,37 @@
+# ==============================================================================
+# Terraform Variables Configuration Example
+# Copy this file to terraform.tfvars and customize for your environment:
+#   cp terraform.tfvars.example terraform.tfvars
+# ==============================================================================
+
+# AWS Region where the learning lab will be deployed
+aws_region        = "ap-south-1"
+availability_zone = "ap-south-1a"
+
+# Project identification tags
+project_name = "docker-learning-log"
+environment  = "dev"
+
+# Network CIDRs
+vpc_cidr           = "10.0.0.0/16"
+public_subnet_cidr = "10.0.1.0/24"
+
+# EC2 Instance Sizing
+# Recommended: t3.small (2 vCPU, 2 GiB RAM) for smooth multi-container labs (~$0.02/hr)
+# Free Tier:   t2.micro (1 vCPU, 1 GiB RAM) if strictly sticking to free tier
+instance_type    = "t3.small"
+root_volume_size = 20
+
+# Security: Inbound access restriction
+# For maximum security, replace 0.0.0.0/0 with your actual public IP:
+# Example: allowed_cidr = "203.0.113.45/32" (find your IP at https://checkip.amazonaws.com)
+allowed_cidr = "0.0.0.0/0"
+
+# SSH Key Pair:
+# Leave existing_key_pair_name empty ("") to let Terraform automatically generate a
+# 4096-bit RSA SSH key pair and save the .pem file into the terraform/ directory.
+# If you want to use an existing key pair from AWS Console, uncomment and specify:
+# existing_key_pair_name = "my-existing-aws-key"
+# existing_key_path      = "~/.ssh/my-existing-aws-key.pem"
+existing_key_pair_name = ""
+existing_key_path      = ""
