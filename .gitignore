@@ -1,0 +1,48 @@
+# ==============================================================================
+# Git Ignore Rules for docker-learning-log
+# ==============================================================================
+
+# Terraform local state and directories
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+*.tfplan
+tfplan
+
+# Terraform lock file and crash logs
+.terraform.lock.hcl
+crash.log
+crash.*.log
+
+# Terraform variable definitions with sensitive credentials
+*.tfvars
+!terraform.tfvars.example
+
+# SSH Private Keys and certificates
+*.pem
+*.key
+*.pub
+id_rsa*
+*.id_rsa
+
+# Environment variables and secrets
+.env
+.env.*
+*.secret
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Windows PowerShell temporary files
+*.tmp
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
